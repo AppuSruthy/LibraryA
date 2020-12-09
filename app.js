@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const port = process.env.PORT || 3000;
 const nav =  [
     {link:'/books',name:'books'},
     {link:'/authors',name:'Authors'},
@@ -30,4 +31,4 @@ app.get('/',function(req,res){
 });
 
 
-app.listen(3000);
+app.listen(port,()=>{console.log("server ready at"+port)});
