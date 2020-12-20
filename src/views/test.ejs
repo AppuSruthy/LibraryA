@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=titile%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+        <link href="css/styles.css" rel="stylesheet">
+		<link href="css/signup.css" rel="stylesheet">
+        
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <!-- <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Category</a>
+        </li>
+        <li>
+          <a href="#">Category</a>
+        </li>
+    </ul> -->
+    <ul class="nav navbar-right navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+              </li>
+        <%}%>
+        
+        
+    </ul>
+      <!-- <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Sign-Up
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+            <div class="registration-form">
+            <form class="login" action = "#" onsubmit = "return validation()">
+                <div class="form-group">
+                  <h3>Please fill this form to create an account.</h3>
+                </div>
+               <br>
+                    <div class="form-group">
+                  <label>First Name</label>
+                  
+                  <input type="text"  class="form-control item" id="FirstName" placeholder="Enter your first name">
+                 
+                  <label id="FirstName1"></label>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  
+                  <input type="text" class="form-control item" id="LastName" placeholder="Enter your last name">
+                
+                  <label id="LastName1"></label>
+                </div>
+                <div class="form-group">
+                  <label>E-Mail</label>
+                 
+                  <input type="text" class="form-control item" id="Mail" placeholder="E-Mail">
+              
+                  <label id="Mail1"></label>
+                </div>
+                <div class="form-group">
+                  <label>Mobile Number</label>
+        
+                  <input type="text" class="form-control item" id="Mobile" placeholder="Enter 10 digit mobile number ">
+               
+                  <label id="Mobile1"></label>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <span id="passreq">[ ! ]</span>
+                     <div id="myModal" class="modal">
+                    <div class="modal-content">
+                          <span class="close">&times;</span>
+                          <h5>Password Requirment</h5>
+                          <ul>
+                            <li>Minimum 8 characters.</li>
+                            <li>Atleast one numeric value.</li>
+                            <li>Atleast one small letter.</li>
+                            <li>Atleast one capital letter.</li><br>
+                            <p>Atleast one special character. (Recommended)</p>
+                          
+                          </ul>
+                        </div>
+          
+                  </div>
+                 
+                  <input type="password" onkeyup="trigger()" class="form-control item" id="password" placeholder="Enter password">
+                  
+                  <span class="showBtn">Show</span>
+                  <label id="password1"></label>
+                </div> 
+                <div class="form-group">
+                  <label>Confirm Password</label>
+               
+                  <input type="password" class="form-control item" id="confpassword" placeholder="Re-enter your password">
+                  
+                  <label id="confpassword1"></label>
+                </div>
+              
+                
+                       
+                    
+                <div class="form-group"> 
+                    <div class="botton">
+                        <button type="submit" class="btn btn-block create-account" id="loginBtn">Create Account</button>
+                    </div>
+              </form>
+            </div>
+          
+          
+          
+          
+          
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Developed by <i class="icon-heart-empty"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sudeepsuseelan@gmail.com">Sudeep</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- script references -->
+  <script src="js/signupval.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,5 +1,5 @@
 let email = document.getElementById("Email");
-let error = document.getElementById("error");
+let error = document.getElementById("emailerror");
 let phn = document.getElementById("phoneNo");
 let error1 = document.getElementById("error1");
 
