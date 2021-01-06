@@ -41,7 +41,8 @@ adminRouter.get('/book',function(req,res){
     });
 adminRouter.post('/addAuthor',function(req,res){
 var auth= {
-    name : req.body.name,
+    name : req.body.authName,
+    authorname : req.body.name,
     language: req.body.language,
     books:req.body.books,
     image:req.body.image

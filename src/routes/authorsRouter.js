@@ -39,6 +39,50 @@ authorsRouter.get('/:id',function(req,res){
 //     })
     
 // });
+
+authorsRouter.get('/delete/:id',function(req,res)
+{
+const id= req.params.id;
+// var condition={"_id":id};
+Authorsdata.deleteOne({_id: id})
+    .then(function(){
+    res.redirect("/authors")
+        
+        
+     })
+  
+
+});
+authorsRouter.get('/update/:id',function(req,res)
+    {
+        
+      res.render('updateBook',{
+          nav,title:"Update Book"
+      })
+    })
+    authorsRouter.post('/:id/update',function (req,res)
+    {
+        
+            var item={
+                title: req.body.title,
+                author: req.body.author,
+                genere: req.body.genere,
+                image: req.body.image
+            }
+            var book= Bookdata(item);
+           
+        const id=req.params.id;
+        Authorsdata.findOneAndReplace({id},(err,doc)=>{
+        // .then(function(){
+        //     // book.save();
+        //     res.redirect("/books",{book})
+        
+            if(!err)
+            // book.save();
+            res.redirect("/authors")
+        })
+    })
+
 return authorsRouter;
 }
 module.exports = router;

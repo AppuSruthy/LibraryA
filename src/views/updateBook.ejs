@@ -3,15 +3,15 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Books</title>
+		<title>Library</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Authors
+        <h1>Update Book
           <p class="lead"></p>
         </h1>
       </div>
@@ -89,46 +89,34 @@
           
           
           
-          <!--/stories-->
-          <%for(i=0;i<authors.length;i++){%>
-          <div class="row">    
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="sun" src="/images/<%=authors[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3><%=authors[i].name%></h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=authors[i].language%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=authors[i].books%><a href="/authors/<%=authors[i]._id%>" class="text-muted">Read More</a></small>
-                  </h4></div>
-
-                  <a href="/authors/update/<%=authors[i]._id%>" class="btn btn-success pull-right btnNext">update</a>
+            <form  method="post" action='/books/update/<%=id%>'>
+                <div class="container">
+                 
                   
-                  <a href="/authors/delete/<%=authors[i]._id%>" id="read" class="btn btn-danger pull-right btnNext">DELETE</a></small>
-
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <%}%>
-          <hr>
-          
-         
               
-            
-                  
-          
-
-     
-          
-          
-          <!--/stories-->
-          
-          
-          <a href="addNew/author" class="btn btn-danger pull-right btnNext">Add Another author <i class="glyphicon glyphicon-chevron-right"></i></a>
+                  <label for="name"><b>Title</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Name"  name="title" required>
+              
+                  <label for="Author"><b>Author</b></label>
+                  <input type="text" class="form-control" placeholder="Enter name of the author" name="author" required>
+              
+                  <label for="genere"><b>Genere</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Genere" name="genere" required>
+              
+                  <label for="image"><b>Image</b></label>
+                  <input type="file" class="form-control"   name="image" required>
+                 
+              
+                 
+              
+                  <div class="clearfix">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="submitbtn">Add</button>
+                  </div>
+                </div>
+              </form>
+              
+          <a href="/" class="btn btn-primary pull-right btnNext">Back</a> <i class="glyphicon glyphicon-chevron-right"></i></a>
         
           
         </div>

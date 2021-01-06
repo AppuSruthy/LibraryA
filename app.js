@@ -3,12 +3,14 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const nav =  [
-    {link:'/books',name:'books'},
-    {link:'/authors',name:'Authors'},
     {link:'/signup',name:'Sign Up'},
     {link:'/login',name:'Login'},
+    {link:'/books',name:'books'},
+    {link:'/authors',name:'Authors'},
+    
     {link:'/admin',name:'Add Book'},
-{link:'/admin/author',name:'Add Author'}
+{link:'/admin/author',name:'Add Author'},
+{link:'/',name:'Logout'}
     ];
 const booksRouter = require('./src/routes/booksRouter.js')(nav);
 const authorsRouter=require('./src/routes/authorsRouter.js')(nav);
